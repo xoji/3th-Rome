@@ -1,0 +1,223 @@
+<!-- This site coded by «Iconic» team for «3rd Rome Taxi» -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Третий рим | Онлайн такси</title>
+    <meta name="description" content="С помощю Третий Рим вы можете заказать такси онлайн и легко!">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="assets/js/select.js"></script>
+    <script src="assets/js/form.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header>
+            <div class="container">
+                <div class="header">
+                    <a href="/" class="main_link">
+                        <div class="logo">
+                            <img src="assets/images/logo.png" alt="" class="logo-img">
+                        </div>
+                    </a>
+                    <div class="navbar">
+                        <nav>
+                            <ul class="nav_menu">
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">История заказов</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Стать водителем</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Бизнесу</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Информация</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="profile_mini">
+                        <div class="profile_img">
+                            <img src="assets/images/profile_img.png" alt="" class="profile-image">
+                        </div>
+                        <div class="profile_info">
+                            <span class="profile_name">Александр</span>
+                            <span class="profile_number">7(905)417-28-09</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- content -->
+        <section class="content">
+            <iframe src="https://yandex.uz/map-widget/v1/-/CCUJ5PwKpC" class="content-map"></iframe>
+            <ul class="tariffs-list">
+                <li class="tariff-item" tariffId="1">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Стандарт</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/standard.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">185 ₽</span>
+                        <span class="time none-event hidden">3 мин</span>
+                    </div>
+                </li>
+                <li class="tariff-item" tariffId="2">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Эконом</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/standard.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">249 ₽</span>
+                        <span class="time none-event hidden">12 мин</span>
+                    </div>
+                </li>
+                <li class="tariff-item" tariffId="3">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Комфорт</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/comf.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">280 ₽</span>
+                        <span class="time none-event hidden">3 мин</span>
+                    </div>
+                </li>
+                <li class="tariff-item" tariffId="4">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Бизнес</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/bussinness.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">324 ₽</span>
+                        <span class="time none-event hidden">3 мин</span>
+                    </div>
+                </li>
+                <li class="tariff-item" tariffId="5">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Доставка</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/delivery.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">–––––</span>
+                        <span class="time none-event none-tariff hidden">3 мин</span>
+                    </div>
+                </li>
+                <li class="tariff-item" tariffId="6">
+                    <div class="tariff-card none-event">
+                        <span class="tariff-name none-event">Грузовое</span>
+                        <div class="car-icon none-event">
+                            <img src="assets/images/delivery-truck.png" alt="" class="car-img none-event">
+                        </div>
+                        <span class="price none-event hidden">–––––</span>
+                        <span class="time none-event none-tariff hidden">3 мин</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- order form -->
+            <div class="tariff-details hided" id="myForm">
+                <form action="#" method="post">
+                    <div class="inputs-parrent"></div>
+                    <div class="input-bg addInput">
+                        <div class="input-icon">
+                            <img src="assets/images/add_input.svg" alt="" class="input-img">
+                        </div>
+                        <div class="input-relative">
+                            <span class="input-txt">Добавить остановку</span>
+                            <input type="text" id="add" class="form-input location">
+                        </div>
+                    </div>
+                    <div class="input-bg comment-input">
+                        <div class="input-icon">
+                            <img src="assets/images/comment-input.svg" alt="" class="input-img">
+                        </div>
+                        <div class="input-relative">
+                            <span class="input-txt">Комментарий</span>
+                            <input type="text" id="comment" class="form-input location">
+                        </div>
+                    </div>
+                    <div class="select-bg services"></div>
+                </form>
+            </div>
+            <!-- order form end -->
+        </section>
+        <!-- content end -->
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-first">
+                        <div class="lang">
+                            <div class="lang-icon">
+                                <img class="lang-img" src="assets/images/lang.svg" alt="">
+                            </div>
+                            <span class="lang-txt">Россия (Русский)</span>
+                        </div>
+                    </div>
+                    <div class="footer-second">
+                        <div class="pay-icon">
+                            <img class="pay-img" src="assets/images/mastercard.png" alt="">
+                        </div>
+                        <div class="pay-icon">
+                            <img class="pay-img" src="assets/images/visa.png" alt="">
+                        </div>
+                        <div class="pay-icon">
+                            <img class="pay-img" src="assets/images/mir.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-first">
+                        <div class="locat-link">
+                            <div class="locat-icon">
+                                <img src="assets/images/location.svg" alt="" class="locat-img">
+                            </div>
+                            <span class="locat-txt">г.Волгоград, улица Куринксая, дом 19, офис 6</span>
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info-value">
+                                <div class="footer-info-icon">
+                                    <img src="assets/images/tel.svg" alt="" class="footer-info-img">
+                                </div>
+                                <span class="footer-info-txt">8-844-233-30-20</span>
+                            </div>
+                            <div class="footer-info-value">
+                                <div class="footer-info-icon">
+                                    <img src="assets/images/inn.svg" alt="" class="footer-info-img">
+                                </div>
+                                <span class="footer-info-txt">ИНН: 343525375489</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-second">
+                        <a href="#" class="footer-app-link">
+                            <div class="footer-app-icon">
+                                <img src="assets/images/appstore.svg" alt="" class="footer-app-img">
+                            </div>
+                        </a>
+                        <a href="#" class="footer-app-link">
+                            <div class="footer-app-icon">
+                                <img src="assets/images/googleplay.svg" alt="" class="footer-app-img">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <span class="footer-copyright">© 2022 • ООО «Третий Рим»</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

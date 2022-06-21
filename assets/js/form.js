@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
     services.create(
         document.querySelector('.services'), [
             { paid: true, selected: false, name: 'Детское кресло' },
-            { paid: true, selected: true, name: 'Перевозка домашнего питомца' },
-            { paid: false, selected: true, name: 'Своя музыка в машине' },
+            { paid: true, selected: false, name: 'Перевозка домашнего питомца' },
+            { paid: false, selected: false, name: 'Своя музыка в машине' },
             { paid: false, selected: false, name: 'Зарядка для телефона' }
         ]
     )

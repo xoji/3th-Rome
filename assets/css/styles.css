@@ -227,11 +227,11 @@ header {
 .input-bg {
     display: flex;
     align-items: center;
-}
-
-.input-bg:not(:last-child) {
     margin-bottom: 27px;
 }
+
+
+/* .input-bg:not(:last-child) {} */
 
 .input-relative {
     position: relative;
@@ -275,6 +275,10 @@ header {
     align-items: center;
     position: relative;
     z-index: 1000;
+}
+
+.select-bg:not(:last-child) {
+    margin-bottom: 27px;
 }
 
 .select-list {

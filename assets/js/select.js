@@ -17,9 +17,13 @@ class Input {
 
     isCheckbox
     currentValue = {}
+    title
+    img
 
-    constructor(isCheckbox) {
+    constructor(isCheckbox, title, img) {
         this.isCheckbox = isCheckbox
+        this.title = title
+        this.img = img
     }
 
     prevValue = null
@@ -35,7 +39,7 @@ class Input {
     create(element, datalist) {
         const bg = createCustomElement('div', null, ['bg'])
         const inputIcon = createCustomElement('div', null, ['input-icon'])
-        const inputImg = createCustomElement('img', [{ key: 'src', value: 'assets/images/add_input.svg' }], ['input-img'])
+        const inputImg = createCustomElement('img', [{ key: 'src', value: this.img }], ['input-img'])
         element.innerHTML = ''
         element.appendChild(inputIcon)
         inputIcon.appendChild(inputImg)
@@ -46,7 +50,7 @@ class Input {
         const list = createCustomElement('ul', null, ['select-list', `${this.isOpen ? 'visible' : 'closed'}`])
         const div = createCustomElement('div', null, ['input-relative'])
         const placeholder = createCustomElement('span', null, ['input-txt'])
-        placeholder.innerHTML = 'Дополнительные услуги'
+        placeholder.innerHTML = this.title
         div.appendChild(placeholder)
         div.appendChild(input)
 
@@ -74,6 +78,12 @@ class Input {
             item.addEventListener('click', () => {
                 if (this.isCheckbox) {
                     data.selected = !data.selected
+                    if (this.changeCallback) {
+                        const data = datalist.filter(val => {
+                            return val.selected
+                        })
+                        this.changeCallback(data)
+                    }
                     this.create(element, datalist)
                 } else {
                     for (const list of datalist) {
@@ -84,6 +94,16 @@ class Input {
                     data.selected = !data.selected
                     if (this.isOpen) {
                         this.isOpen = false
+                    }
+                    if (this.changeCallback) {
+                        let data
+                        for (let index = 0; index < datalist.length; index++) {
+                            const element = datalist[index];
+                            if (element.selected) {
+                                data = element
+                            }
+                        }
+                        this.changeCallback(data)
                     }
                     this.create(element, datalist)
                 }

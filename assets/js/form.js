@@ -18,7 +18,8 @@ const form = {
     comment: '',
     services: [],
     is_card: false,
-    tariff_id: null
+    tariff_id: null,
+    payment: null
 }
 
 const onChange = (input, value, index) => {
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             time.classList.add('selected-tariff-time')
         })
     }
-    const services = new Input(true)
+    const services = new Input(true, 'Дополнительные услуги', 'assets/images/comment-input.svg')
     services.create(
         document.querySelector('.services'), [
             { paid: true, selected: false, name: 'Детское кресло' },
@@ -113,7 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     )
     services.onChange((value) => {
-
+        form.services = value
+        console.log(form);
+    })
+    const payment = new Input(false, 'Cпособ оплаты', 'assets/images/comment-input.svg')
+    payment.create(
+        document.querySelector('.payment'), [
+            { paid: true, selected: false, name: 'Детское кресло' },
+            { paid: true, selected: false, name: 'Перевозка домашнего питомца' },
+            { paid: false, selected: false, name: 'Своя музыка в машине' },
+            { paid: false, selected: false, name: 'Зарядка для телефона' }
+        ]
+    )
+    payment.onChange(value => {
+        form.payment = value
+        console.log(form);
     })
     document.querySelector('#add').addEventListener('input', addLocation)
     addressChange()

@@ -33,11 +33,15 @@ class Input {
     }
 
     create(element, datalist) {
+        const bg = createCustomElement('div', null, ['bg'])
         const inputIcon = createCustomElement('div', null, ['input-icon'])
         const inputImg = createCustomElement('img', [{ key: 'src', value: 'assets/images/add_input.svg' }], ['input-img'])
         element.innerHTML = ''
         element.appendChild(inputIcon)
         inputIcon.appendChild(inputImg)
+        if (this.isOpen) {
+            element.appendChild(bg)
+        }
         const input = createCustomElement('input', [{ key: 'type', value: 'text' }, { key: 'disabled', value: 'true' }], ['select-input', 'form-input'])
         const list = createCustomElement('ul', null, ['select-list', `${this.isOpen ? 'visible' : 'closed'}`])
         const div = createCustomElement('div', null, ['input-relative'])
@@ -68,8 +72,21 @@ class Input {
             item.appendChild(selectedDiv)
             list.appendChild(item)
             item.addEventListener('click', () => {
-                data.selected = !data.selected
-                this.create(element, datalist)
+                if (this.isCheckbox) {
+                    data.selected = !data.selected
+                    this.create(element, datalist)
+                } else {
+                    for (const list of datalist) {
+                        if (list.selected) {
+                            list.selected = !list.selected
+                        }
+                    }
+                    data.selected = !data.selected
+                    if (this.isOpen) {
+                        this.isOpen = false
+                    }
+                    this.create(element, datalist)
+                }
             })
         }
 
@@ -77,6 +94,10 @@ class Input {
         element.appendChild(list)
         div.addEventListener('click', () => {
             this.isOpen = !this.isOpen
+            this.create(element, datalist)
+        })
+        bg.addEventListener('click', () => {
+            this.isOpen = false
             this.create(element, datalist)
         })
     }

@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             time.classList.add('selected-tariff-time')
         })
     }
-    const services = new Input()
+    const services = new Input(true)
     services.create(
         document.querySelector('.services'), [
             { paid: true, selected: false, name: 'Детское кресло' },
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { paid: false, selected: false, name: 'Зарядка для телефона' }
         ]
     )
+    services.onChange((value) => {
+
+    })
     document.querySelector('#add').addEventListener('input', addLocation)
     addressChange()
 })

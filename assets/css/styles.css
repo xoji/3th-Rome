@@ -274,6 +274,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 1000;
 }
 
 .select-list {
@@ -287,6 +288,7 @@ header {
     margin: 0;
     list-style: none;
     overflow: hidden;
+    z-index: 1000;
 }
 
 .select-items {
@@ -332,6 +334,15 @@ header {
 
 .selected-img {
     width: 12px;
+}
+
+.bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
 }
 
 
